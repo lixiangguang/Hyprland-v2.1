@@ -1,83 +1,142 @@
 <br>
-<h3 align = "center"> Arch Hyprland Dotfiles and Script Installer</h3>
+<h3 align = "center"> Arch Hyprland 配置文件和安装脚本</h3>
 <br>
-### Components:
 
-- Main Component: [`Hyprland`](https://github.com/hyprwm/Hyprland)
+**感谢原作者JaKooLit !!**
+感兴趣可以加[DC](https://discord.gg/tD4VBc64WS), 作者非常热情, 有bug马上就改了
+
+> 适用arch最小安装后执行
+> [指南](docs/zh-cn/cheatsheet.md) | [Github Repo](https://github.com/jqtmviyu/Hyprland-v2.1/tree/personal)<br>
+
+## ✨ 相对原版的区别:
+
+**几乎没有**, 只是改得更适合自己
+
+1. 中文 README
+1. 添加剪切板管理器
+1. 更改区域截图脚本
+1. 使用macos主题 (进行中...)
+1. 删掉安装脚本中华硕驱动安装部分
+1. 删掉不喜欢的布局,调整dark/light样式
+1. 修改快捷键
+
+## 重要组件:
+
+- Wayland合成器: [`Hyprland`](https://github.com/hyprwm/Hyprland)
  
-- Terminal: [`Foot`](https://github.com/r-c-f/foot)
+- 终端: [`Foot`](https://github.com/r-c-f/foot)
  
-- Status bar: [`Waybar`](https://github.com/Alexays/Waybar)
+- 状态栏: [`Waybar`](https://github.com/Alexays/Waybar)
  
-- Menu : [`Wofi`](https://hg.sr.ht/~scoopta/wofi)
+- 启动器 : [`Wofi`](https://hg.sr.ht/~scoopta/wofi)
 
-- FIle Manager: [`Thunar`](https://docs.xfce.org/xfce/thunar/start) (Optional)
+- 文件管理器(可选): [`Thunar`](https://docs.xfce.org/xfce/thunar/start)
 
-### FEATURES or Whats included in the dotfiles:
--  By default, Catpuccin Mocha Theme for Hyprland is enabled
+## 展示:
 
-### Miscellaneous (Optional):
--  Themes: `Catppuccin Mocha GTK Theme`
--  Cursor theme: `Catppuccin Cursors`
+![systeminfo](/static/screenshots/systeminfo.png)
 
-### Needed packages:
-- (all of the above components) plus
-- `swaybg` - for wallpaper
-- `swwww` - for wallpaper animation
-- `swayidle` - not necessary but you can install
-- `swaylock-effects` - or swaylock
-- `wlroots` `wlogout` `cava` `polkit-kde-agent`
-- `mako` - for notifications
-- `grim` `slurp` `wl-clipboard` - for screenshot
-- `brightnessctl`  - for monitor and keyboard brightness - not needed for desktop
-- `mpv` - for wofi beats to work
-- `viewnior` or `swayimg`  
-- `pamixer` - for volume control notification. 
-- `playerctl` - Keyboard hotkeys multimedia controls
-- `xorg-xwayland` - needed to run some non-wayland app especially games
-- `fonts` - required awesome fonts. AUR and official repo have... else most of the waybar modules wont work. Most of configs here I used Fantasque Sans Mono. I used Cascadia Code Semibold Italic on foot.
-- `pipewire` - needed pipewire pipewire-pulse pipewire-alsa
-- `xdg-user-dirs` - by default archinstall script does not install this on "minimal" profile. That is why I have added in script
+![light-mode](/static/screenshots/light-mode.png)
 
-### ✨ Arch Linux quick Installation:
-- A guide to install using the install script:[`Youtube Link`](https://youtu.be/sgDJnaMgtY0) 
-- a.) You can install one by one packages above or choose the automatic installer script.
-- b.) If you want to add or edit packages, edit install-hyprland script. Ensure packages are present on AUR or official else the script will fail.
-- c.) Installation of Asus-ROG-utilities are entirely optional. This is only for Asus Laptop. if you select no, will skip the step.
-- d.) Thunar and necessary plugins are entirely optional
+![dark-mode](/static/screenshots/dark-mode.png)
 
-### ✨ If upgrading from Hyprland-v2, 
-- easy way, ran script, script will create back-up of your files and folders (which needed for the config-dots) so you can easily copy over.
-- long way, copy the scripts in config/hypr/scripts and copy to your ~/.config/hypr/scripts . Make sure to make them executable after copied. By running chmod +x filename..
-- copy the waybar folder in config/hypr/waybar to your ~/.config/hypr/waybar
-- copy the wallpapers to your ~/Pictures . Some scripts are checking those folder. If not, modify the scripts changeWallpaper, changeWallpaper2, dark-light-mode, wallpaper-switcher in your ~/.config/hypr/scripts to your actual wallpapers.
+## 主题:
+-  窗口: `mojave-gtk-theme-git`
+-  鼠标: `mcmojave-cursors-git`
+-  图标: `mcmojave-circle-icon-theme-git`
 
-### ✨ Some notes regarding using the install script:
-- clone this repo by using git. Change directory, make executable and run the script >cd Hyprland-v2.1 chmod +× install-Hyprland-2.1 ./install-Hyprland-2.1
-- Optional stuff you can do using the script includes choices of the following:
--   a.) you can choose either yay or paru (if they are not installed)
--   b.) whether to install none-nvidia patch hyprland package if nvidia gpu detected, 
--   c.) whether to install Catppuccin GTK themes and cursors (Mocha)
--   d.) whether to install thunar and necessary plugins
--   e.) whether to install bluetooth including blueman
--   f.) whether to install and use SDDM as login manager including catppuccin theme
--   g.) whether to install asusctl and supergfxctl (for ASUS rog laptops)
--   h.) whether to disable wifi powersave
--   i.) whether to install xdg-desktop-portal-hyprland
+## 默认安装:
+- `foot` `wofi`
+- `swaybg`: 壁纸
+- `swwww`: 动态壁纸(支持webp gif,不支持mp4)
+- `nwg-look-bin`:  GTK3 设置编辑器(eg:主题设置)
+- `swaylock-effects`: 屏幕锁定
+- `wlroots`: Wayland合成器库
+- `wlogout`: 注销菜单
+- `cava`: 音频可视化
+- `polkit-kde-agent`: 身份验证
+- `mako`: 通知
+- `grim` `slurp`: 截图
+- `swappy`: 截图处理
+- `wl-clipboard` `cliphist`: 剪切板管理
+- `brightnessctl`: 笔记本亮度控制(台式不需要)
+- `mpv`: 视频播放
+- `ristretto`: 图片查看
+- `pamixer`: 命令行音量控制
+- `playerctl`: 命令行播放控制
+- `xorg-xwayland`: 兼容x11应用
+- `JetBrainsMono Nerd Font`: 状态栏图标字体
+- `nerd-fonts-sarasa-term`: 中英文字体带图标, 等距更纱黑体
+- `pipewire` `pipewire-pulse` `pipewire-alsa` `wireplumber` `pavucontrol`: 音频相关
+- `xdg-user-dirs`: 创建常见用户文件夹
+- `btop`: 进程查看
+- `network-manager-applet`: 网络管理
+- `qt5ct`: Qt5 配置工具
+- `gvfs`: 虚拟文件系统
+- `gvfs-mtp`: 手机mtp连接
+- `ffmpegthumbs`: 解码
+- `python-requests`: http请求
+- `jq`: JSON 处理
+- `gtk4`: 兼容chrome/chromium中文输入
 
-### ✨ NVIDIA-Hyprland notes:
-- kindly note, on configs I added all the nvidia variables from Hyprland wiki [`Link`](https://wiki.hyprland.org/Nvidia/) but by default they are not enabled. I've had issues like OBS not recording, or intermittent crashing etc, on my laptop. Check the ~/.config/hypr/configs/exec.conf and uncomment one by one to try. You can read through Hyprland-Wiki for some guidance.
+## 可选安装:
 
-### ✨ Manual Installation and Notes: 
-#### you can copy, create, change, however, would appreciate to submit like a pull request or issues if you have a better solution / changes so we will all improve :)
+- `yay` / `paru`: 必须有其一
+- `hyprland`: 
+    - 没有检测到N卡: `hyprland`
+    - 检测到N卡(不稳定, 建议查看wiki): `hyprland-nvidia-git` `nvidia-dkms` `nvidia-settings` `nvidia-utils` `libva` `libva-nvidia-driver-git`
+- `waybar-hyprland-git`: 已安装`waybar`可选择不安装
+- `mojave-gtk-theme-git` `whitesur-icon-theme-git` `mcmojave-cursors-git`: gtk主题
+- `thunar` `thunar-volman` `tumbler` `thunar-archive-plugin` `xarchiver`: 文件管理器
+- `bluez` `bluez-utils` `blueman`: 蓝牙
+- `sddm-git` `sddm-catppuccin-git`: 登录器和登录器主题
+- `xdg-desktop-portal-hyprland`: 截图和屏幕共享需要
 
-###Please note, Only provided are configs. Any Hyprland-related issues to be reported on Hyprland Github
-- a.) Copy / Move files / folders in your ~/.config
-- a.1) by default, no kb_layout set up in ~/.config/hypr/hyprland.conf . It wilp be set during script install. If you manually copy, ensure to put a value ie, us
-- b.) Copy wallpapers to your ~/Pictures/ or you need to edit the scripts. See above (upgrading from Hyprland-v2) notes.
-- c.) kb_layout is not defined in hyprland.conf as it is part of the script. If you manually copy, ensure to add kb_layout 
-- d.) if you have azerty keyboard [`this`](https://github.com/swaywm/sway/issues/1460?fbclid=IwAR1C8VcY_wWbGhXvT-5ApjJCQuJoJzhOVor6o5fdn0Nj1c6bD9JXoQAPQIg) might help
+## 自行安装:
 
-### ✨ known-issues:
+- `swayidle`: 空闲管理器(eg: 进入空闲状态时锁定屏幕/演示模式)
+- `checkupdates-with-aur`: 状态栏检查更新模块
+- `cronie`: 定时任务支持
+
+## ✨ Arch Linux 安装教程:
+- 中文教程: https://arch.icekylin.online/
+- 如果想用`system-boot`替换`grub`: https://wiki.archlinux.org/title/systemd-boot
+
+```sh
+sudo bootctl --path=/boot install
+sudo mkdir -p /boot/loader/entries
+sudo vim /boot/loader/entries/arch.conf
+===
+title          Arch Linux
+linux          /vmlinuz-linux
+initrd         /intel-ucode.img
+initrd         /initramfs-linux.img
+options        root=LABEL=myArch rw rootflags=subvol=/@
+===
+
+yay -S systemd-boot-pacman-hook # 自动更新
+
+sudo vim /boot/loader/loader.conf
+===
+default  arch.conf
+timeout 0
+editor   no
+===
+```
+
+- 挂载`btrfs`时可选择强制压缩`compress-force=zstd`
+
+
+
+## ✨ NVIDIA-Hyprland 相关:
+- 为了使`OBS`正常录制, 在`~/.config/hypr/configs/exec.conf`添加了许多变量但并未启用, 请多尝试.
+- 也可以阅读 [Hyprland-Wiki](https://wiki.hyprland.org/) 获取更多帮助.
+
+## ✨ 其他: 
+- 键盘布局(`kb_layout`)在`~/.config/hypr/hyprland.conf`中使用, 在安装脚本运行时可设置, 例如美式布局:`us`
+- 如果是法语键盘, 查看这个[issue](https://github.com/swaywm/sway/issues/1460?fbclid=IwAR1C8VcY_wWbGhXvT-5ApjJCQuJoJzhOVor6o5fdn0Nj1c6bD9JXoQAPQIg)
+
+### ✨ 已知问题:
+- [ ] SDDM 主题未更改成mac样式
 - [ ] fractional scaling breaks swww
-- [ ] cant get cava module to work on waybar
+- [ ] cava 模块无法在状态栏工作

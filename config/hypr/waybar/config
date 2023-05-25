@@ -13,30 +13,31 @@
 "margin-right": 10,
 
 "modules-left": [
-	"wlr/workspaces", 
-	"cpu", 
-	"temperature", 
+	"cpu",
 	"memory",
-	//"disk", 
+	"temperature",
+	"disk",
+	"custom/updater",
 	"custom/weather",
 	],
-  
+
 "modules-center": [
-	"custom/menu", 
+  "custom/menu",
+  "idle_inhibitor",
 	"clock",
-	//"custom/cycle_wall",
+	"wlr/workspaces",
+  "custom/cycle_wall",
 	"custom/light_dark",
-	"custom/lock", 	
-	], 
+	],
 
 "modules-right": [
-	"hyprland/window", 
-	"tray", 
-	"battery", 
+	//"hyprland/window",
+	"tray",
 	"backlight",
 	"pulseaudio",
-	//"wireplumber", 
-	"pulseaudio#microphone", 
+	"pulseaudio#microphone",
+	"battery",
+	"custom/lock",
 	"custom/power",
 	],
 }
