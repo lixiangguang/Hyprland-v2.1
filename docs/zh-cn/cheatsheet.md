@@ -7,7 +7,7 @@
 
 ## 预设快捷键
 
-* Super + shift + ? : 弹窗, 你可以选择后快速查看快捷键等设置文件
+* Super + shift + / : 弹窗, 你可以选择后快速查看快捷键等设置文件
 * Super + enter : foot 终端
 * Super + d : wofi 应用选择
 * Super + t : Thunar 文件管理器
@@ -37,7 +37,7 @@
 
 ## 状态栏快捷操作
 
-*  : 鼠标左键 状态栏样式切换；右键 透明度调整；中键 布局模式切换
+*  : 鼠标左键 状态栏样式切换；右键 透明度调整；中键 快速查看hyprland配置文件
 *  : 演讲模式(不锁屏不变暗)(实际生效不生效不清楚)
 *  : 左键 检查更新, 鼠标 右键清理垃圾
 *  : 左键 静态壁纸切换；右键 动态壁纸切换；中键 静态壁纸选择；
@@ -46,11 +46,12 @@
 *  : 电源选项
 
 
-## 其他
+## 常见问题
 
 * `hyprland` 设置目录在`~/.config/hypr/
+* 查看是否使用`wayland`渲染: `hyprctl clients`
 
-## 没有声音
+### 没有声音
 
 ```sh
 # 查看声卡信息
@@ -75,4 +76,80 @@ alsamixer
 amixer set Master unmute
 
 # 可能还需要重启
+```
+
+### chrome不支持中文输入
+
+`chrome://flags`
+
+`Preferred Ozone platform` 设置为 `Wayland` 后重启
+
+*提示框错位暂时未解决*
+
+### firefox
+
+添加环境变量
+
+```sh
+sudo vim /etc/environment
+===
+MOZ_ENABLE_WAYLAND=1
+===
+```
+
+## 常见软件
+
+### 中文输入法
+
+* 安装fcitx5-rime
+
+```sh
+yay -S fcitx5 fcitx5-gtk fcitx5-qt fcitx5-rime  fcitx5-configtool 
+```
+
+部署文件目录 `~/.local/share/fcitx5/rime`
+
+* (可选)[主题安装](https://github.com/hosxy/Fcitx5-Material-Color)
+
+`yay -S fcitx5-material-color`
+
+### 按键映射
+
+`yay -S keyd-git`
+
+以`capslock+h/j/k/l` 映射为方向键为例
+
+```sh
+# 添加自启动
+sudo systemctl enable keyd
+
+# 添加配置, 把 capslock + hjkl 映射到 vim 移动模式
+sudo vim /etc/keyd/default.conf
+
+===
+[ids]
+
+*
+
+[main]
+capslock = overload(capslock_layer, esc)
+
+[capslock_layer]
+esc = capslock
+
+h = left
+j = down
+k = up
+l = right
+
+u = pageup
+p = pagedown
+i = home
+o = end
+
+m = backspace
+===
+
+# 启动
+sudo systemctl start keyd
 ```
