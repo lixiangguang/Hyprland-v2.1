@@ -270,7 +270,7 @@ for PKG1 in foot swaybg swaylock-effects wofi wlogout mako grim slurp wl-clipboa
     fi
 done
 
-for PKG2 in qt5ct btop jq gvfs gvfs-mtp ffmpegthumbs mpv python-requests pamixer brightnessctl xdg-user-dirs ristretto swappy mpv network-manager-applet cava gtk4; do
+for PKG2 in qt5ct btop jq gvfs gvfs-mtp ffmpegthumbs mpv curl pamixer brightnessctl xdg-user-dirs ristretto swappy mpv network-manager-applet cava gtk4; do
     install_package  "$PKG2" 2>&1 | tee -a "$LOG"
     if [ $? -ne 0 ]; then
         echo -e "\e[1A\e[K${ERROR} - $PKG2 install had failed, please check the install.log"
@@ -278,7 +278,7 @@ for PKG2 in qt5ct btop jq gvfs gvfs-mtp ffmpegthumbs mpv python-requests pamixer
     fi
 done
 
-for FONT in otf-font-awesome otf-font-awesome-4 nerd-fonts-sarasa-term; do
+for FONT in ttf-jetbrains-mono-nerd nerd-fonts-sarasa-term; do
     install_package  "$FONT" 2>&1 | tee -a "$LOG"
         if [ $? -ne 0 ]; then
         echo -e "\e[1A\e[K${ERROR} - $FONT install had failed, please check the install.log"

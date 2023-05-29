@@ -75,7 +75,7 @@
 - `gvfs`: 虚拟文件系统
 - `gvfs-mtp`: 手机mtp连接
 - `ffmpegthumbs`: 解码
-- `python-requests`: http请求
+- `curl`: 天气脚本使用
 - `jq`: JSON 处理
 - `gtk4`: 兼容chrome/chromium中文输入
 
