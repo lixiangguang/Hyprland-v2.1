@@ -2,11 +2,13 @@
 <h3 align = "center"> Arch Hyprland 配置文件和安装脚本</h3>
 <br>
 
+[English](README_EN.md)
+
 **感谢原作者JaKooLit !!**
 感兴趣可以加[DC](https://discord.gg/tD4VBc64WS), 作者非常热情, 有bug马上就改了
 
 > 适用arch最小安装后执行
-> [指南](docs/zh-cn/cheatsheet.md) | [Github Repo](https://github.com/jqtmviyu/Hyprland-v2.1/tree/personal)<br>
+>[English Readme](README_EN.md) | [指南](docs/cheatsheet.md) | [Github Repo](https://github.com/jqtmviyu/Hyprland-v2.1/tree/personal)<br>
 
 ## ✨ 相对原版的区别:
 
@@ -86,7 +88,7 @@
     - 没有检测到N卡: `hyprland`
     - 检测到N卡(不稳定, 建议查看wiki): `hyprland-nvidia-git` `nvidia-dkms` `nvidia-settings` `nvidia-utils` `libva` `libva-nvidia-driver-git`
 - `waybar-hyprland-git`: 已安装`waybar`可选择不安装
-- `mojave-gtk-theme-git` `whitesur-icon-theme-git` `mcmojave-cursors-git`: gtk主题
+- `mojave-gtk-theme-git` `mcmojave-circle-icon-theme-git` `mcmojave-cursors-git`: gtk主题
 - `thunar` `thunar-volman` `tumbler` `thunar-archive-plugin` `xarchiver`: 文件管理器
 - `bluez` `bluez-utils` `blueman`: 蓝牙
 - `sddm-git` `sddm-catppuccin-git`: 登录器和登录器主题
