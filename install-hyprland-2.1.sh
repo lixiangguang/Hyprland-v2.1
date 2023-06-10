@@ -410,7 +410,6 @@ if [[ $install_sddm =~ ^[Yy]$ ]]; then
       exit 1
     fi
   done
-  cp -r theme/sddm/ /usr/share/sddm/themes/
 
     # Check if other login managers installed and disabling its service before enabling sddm
     if pacman -Qs lightdm > /dev/null ; then
