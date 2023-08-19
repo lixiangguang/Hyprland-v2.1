@@ -42,7 +42,7 @@
     "interval": 30,
     "path": "/",
     "format": "󰋊 {percentage_used}%",
-    "tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)",
+    "tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)"
   },
   "custom/updater": {
     "format": " {}",
@@ -129,7 +129,7 @@
   },
   "custom/cycle_wall": {
     "format": "",
-    "exec": "~/.config/hypr/scripts/tooltip.sh 'randomWallpaper\nswitchWallpaperMode\rstatic-wallpaper-select'",
+    "exec": "~/.config/hypr/scripts/tooltip.sh 'LBM:randomWallpaper\rRBM:switchWallpaperMode\rBBM:static-wallpaper-select'",
     "return-type": "json",
     "tooltip": true,
     "on-click": "~/.config/hypr/scripts/randomWallpaper.sh",
@@ -243,14 +243,14 @@
   "custom/power": {
     "format": "",
     "tooltip": false,
-    "on-click": "sh -c '(sleep 0.5s; wlogout --protocol layer-shell)' & disown",
+    "on-click": "sh -c '(sleep 0.5s; wlogout --protocol layer-shell)' & disown"
   },
 
 
   "hyprland/window": {
     "format": "{}",
     "max-length": 360,
-    "separate-outputs": true,
+    "separate-outputs": true
   },
   "wlr/taskbar": {
     "format": "{icon} {name} ",
