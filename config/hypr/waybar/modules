@@ -42,7 +42,7 @@
     "interval": 30,
     "path": "/",
     "format": "󰋊 {percentage_used}%",
-    "tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)"
+    "tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)",
   },
   "custom/updater": {
     "format": " {}",
@@ -65,7 +65,7 @@
   },
   "custom/menu": {
     "format": "",
-    "exec": "~/.config/hypr/scripts/tooltip.sh 'LBM:bar-style\rRBM:blur-type\rBBM:quickEdit'",
+    "exec": "~/.config/hypr/scripts/tooltip.sh 'LBM:bar-style\rRBM:blur-switch\rBBM:quickEdit'",
     "return-type": "json",
     "tooltip": true,
     "on-click": "~/.config/hypr/scripts/waybarStyleChange.sh",
@@ -106,7 +106,7 @@
       "on-scroll-down": "shift_down"
     }
   },
-  "wlr/workspaces": {
+  "hyprland/workspaces": {
     "format": "{name}",
     //"format": "{name}: {icon}",
     "on-click": "activate",
@@ -243,14 +243,14 @@
   "custom/power": {
     "format": "",
     "tooltip": false,
-    "on-click": "sh -c '(sleep 0.5s; wlogout --protocol layer-shell)' & disown"
+    "on-click": "sh -c '(sleep 0.5s; wlogout --protocol layer-shell)' & disown",
   },
 
 
   "hyprland/window": {
     "format": "{}",
     "max-length": 360,
-    "separate-outputs": true
+    "separate-outputs": true,
   },
   "wlr/taskbar": {
     "format": "{icon} {name} ",

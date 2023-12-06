@@ -19,6 +19,7 @@
 * Super + b : 关闭状态栏
 * Super + space : 平铺/浮动模式切换
 * Super + shift + space : 窗口对调
+* Super + tab : 上一个工作区间 
 * Super + F : 全屏
 * Super + L : 锁屏
 * Super + N : 上一个窗口
@@ -124,6 +125,7 @@ yay -S fcitx5 fcitx5-gtk fcitx5-qt fcitx5-rime  fcitx5-configtool
 sudo systemctl enable keyd
 
 # 添加配置, 把 capslock + hjkl 映射到 vim 移动模式
+# ctrl 和 alt 对调
 sudo vim /etc/keyd/default.conf
 
 ===
@@ -133,6 +135,8 @@ sudo vim /etc/keyd/default.conf
 
 [main]
 capslock = overload(capslock_layer, esc)
+alt = layer(control)
+control = layer(alt)
 
 [capslock_layer]
 esc = capslock

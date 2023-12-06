@@ -1,13 +1,11 @@
 #!/bin/bash
 
-STATE=$(hyprctl -j getoption decoration:blur_passes | jq ".int")
+STATE=$(hyprctl -j getoption decoration:blur:enabled | jq ".int")
 
-if [ "${STATE}" == "2" ]; then
-  hyprctl keyword decoration:blur_size 3
-	hyprctl keyword decoration:blur_passes 1
-  notify-send "Normal blur"
+if [ "${STATE}" == "1" ]; then
+  hyprctl keyword decoration:blur:enabled false
+  notify-send "disable blur"
 else
-  hyprctl keyword decoration:blur_size 7.8
-	hyprctl keyword decoration:blur_passes 2
+  hyprctl keyword decoration:blur:enabled true
   notify-send "Glassmorphism blur"
 fi

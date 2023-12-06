@@ -4,12 +4,10 @@
 THEMEIS=$(realpath ~/.config/hypr/waybar/style.css | sed 's/.*-\(.*\)\.css/\1/')
 
 # Change theme
-if [ "$THEMEIS" == "default" ]; then
+if [ "$THEMEIS" == "dark" ]; then
     SWITCHTO="-light"
-elif [ "$THEMEIS" == "light" ]; then
-    SWITCHTO="-dark"
 else
-    SWITCHTO="-default"
+    SWITCHTO="-dark"
 fi
 
 # Set the waybar theme

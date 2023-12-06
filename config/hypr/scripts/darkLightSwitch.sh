@@ -25,7 +25,7 @@ notify_user() {
 }
 
 # Determine the current wallpaper mode by checking a configuration file
-if [ "$(cat ~/.wallpaper_mode)" = "light" ]; then
+if [ "$(cat ~/.theme_mode)" = "light" ]; then
   current_mode="light"
   next_mode="dark"
 else
@@ -56,7 +56,7 @@ fi
 $swww "${next_wallpaper}" $effect
 
 # Update the configuration file to reflect the new wallpaper mode and current wallpaper
-echo "$next_mode" > ~/.wallpaper_mode
+echo "$next_mode" > ~/.theme_mode
 echo "$next_wallpaper" > ~/.current_wallpaper
 
 exec ~/.config/hypr/scripts/startup.sh &

@@ -1,139 +1,67 @@
 * {
   font-family: "JetBrainsMono Nerd Font";
-  font-weight: bold;
   min-height: 0;
-  font-size: 16px;
-  padding: 0;
+  font-size: 100%;
+  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+  padding: 0px;
   margin-top: 1px;
   margin-bottom: 1px;
 }
 
-window#waybar {
-  background: rgba(0, 0, 0, 0)
+
+#window {
+  /*background-color: --wofi-color0;*/
+  background-color: rgba(50, 50, 50, 0.8);
+  color: --wofi-color2;
+  /*border: 2px solid --wofi-color1;*/
+  border-radius: 0px;
 }
 
-window#waybar.hidden {
-  opacity: 0.5;
+#outer-box {
+  padding: 20px;
 }
 
-tooltip {
-  background: #373737;
-  border-radius: 10px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: #373737;
+#input {
+  background-color: --wofi-color1;
+  /*border: 1px solid --wofi-color3;*/
+  padding: 8px 12px;
 }
 
-/*-----module groups----*/
-.modules-right {
-  background-color: #373737;
-  border: 0px solid #191919;
-  border-radius: 10px;
+#scroll {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.modules-center {
-  background-color: #373737;
-  border: 0px solid #373737;
-  border-radius: 10px;
+#inner-box {}
+
+#img {
+  padding-right: 10px;
 }
 
-.modules-left {
-  background-color: #373737;
-  border: 0px solid #373737;
-  border-radius: 10px;
-
+#text {
+  color: --wofi-color2;
 }
 
-#workspaces button {
-  padding: 2px;
-  color: #4f4f4f;
-  margin-right: 5px;
+#text:selected {
+  color: --wofi-color0;
 }
 
-#workspaces button.active {
-  color: #dedede;
-  border-radius: 15px 15px 15px 15px;
+#entry {
+  padding: 6px;
 }
 
-#workspaces button.focused {
-  color: #d8dee9;
+#entry:selected {
+  background-color: #315bef;
+  background: linear-gradient(90deg, #748dea, #315bef);
+  color: --wofi-color0;
 }
 
-#workspaces button.urgent {
-  color: #11111b;
-  border-radius: 10px;
-}
+#unselected {}
 
-#workspaces button:hover {
-  color: #fff;
-  border-radius: 15px;
-}
+#selected {}
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#network,
-#pulseaudio,
-#wireplumber,
-#mode,
-#tray,
-#cava,
-#backlight,
-#window,
-#idle_inhibitor,
-#mpd,
-#bluetooth,
-#taskbar,
-#taskbar button,
-#workspaces,
-#custom-light_dark,
-#custom-updater,
-#custom-menu,
-#custom-cycle_wall,
-#custom-power,
-#custom-spotify,
-#custom-weather,
-#custom-power,
-#custom-lock,
-#custom-weather.severe,
-#custom-weather.sunnyDay,
-#custom-weather.clearNight,
-#custom-weather.cloudyFoggyDay,
-#custom-weather.cloudyFoggyNight,
-#custom-weather.rainyDay,
-#custom-weather.rainyNight,
-#custom-weather.showyIcyDay,
-#custom-weather.snowyIcyNight,
-#custom-weather.default #idle_inhibitor {
-  color: #fff;
-  padding: 0px 10px;
-  border-radius: 10px;
-}
-
-
-
-#temperature.critical {
-  background-color: #ff0000;
-}
-
-@keyframes blink {
-  to {
-    color: #000000;
-  }
-}
-
-#taskbar button.active {
-  background-color: #7f849c;
-}
-
-#battery.critical:not(.charging) {
-  color: #f53c3c;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+#input,
+#entry:selected {
+  border-radius: 8px;
+  border: 1px solid #7f849c;
 }

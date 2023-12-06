@@ -17,7 +17,7 @@ change_swww(){
 }
 
 change_current(){
-  if pidof swaybg >/dev/null; then
+  if [ "$(cat ~/.wallpaper_app)" = "swaybg" ]; then
     change_swaybg
   else
     change_swww
@@ -27,8 +27,10 @@ change_current(){
 switch(){
   if pidof swaybg >/dev/null; then
     change_swww
+    echo "swww" > ~/.wallpaper_app
   else
     change_swaybg
+    echo "swaybg" > ~/.wallpaper_app
   fi
 }
 
